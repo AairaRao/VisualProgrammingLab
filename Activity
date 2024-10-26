@@ -1,0 +1,102 @@
+using System;
+
+public class WorkItem
+{
+    // Static field to store the job ID of the last created WorkItem
+    private static int currentID;
+
+    // Properties
+    protected int ID { get; set; }
+    protected string Title { get; set; }
+    protected string Description { get; set; }
+    protected TimeSpan jobLength { get; set; }
+
+    // Default constructor
+    public WorkItem()
+    {
+        ID = 0;
+        Title = "Default title";
+        Description = "Default description.";
+        jobLength = new TimeSpan();
+    }
+
+    // Parameterized constructor
+    public WorkItem(string title, string desc, TimeSpan joblen)
+    {
+        ID = GetNextID();
+        Title = title;
+        Description = desc;
+        jobLength = joblen;
+    }
+
+    // Static constructor to initialize static member currentID
+    static WorkItem()
+    {
+        currentID = 0;
+    }
+
+    // Method to get the next ID
+    protected int GetNextID()
+    {
+        return ++currentID;
+    }
+
+    // Method to update title and job length
+    public void Update(string title, TimeSpan joblen)
+    {
+        Title = title;
+        jobLength = joblen;
+    }
+
+    // Override of the ToString method from System.Object
+    public override string ToString()
+    {
+        return String.Format("{0}: {1}", ID, Title);
+    }
+}
+
+// Derived class ChangeRequest inherits WorkItem
+public class ChangeRequest : WorkItem
+{
+    protected int originalItemID { get; set; }
+
+    // Default constructor
+    public ChangeRequest() { }
+
+    // Constructor with parameters for the derived class
+    public ChangeRequest(string title, string desc, TimeSpan jobLen, int originalID)
+        : base(title, desc, jobLen) // Call base constructor
+    {
+        originalItemID = originalID;
+    }
+
+    public ChangeRequest(int originalItemID)
+    {
+        this.originalItemID = originalItemID;
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Create an instance of WorkItem using the parameterized constructor
+        WorkItem item = new WorkItem("Fix Bugs", "Fix all bugs in my code branch", new TimeSpan(3, 4, 8, 8));
+
+        // Create an instance of ChangeRequest using the parameterized constructor
+        ChangeRequest change = new ChangeRequest("Change Base Class Design", "Add members to the class", new TimeSpan(4, 0, 0), 1);
+
+        // Use the ToString method defined in WorkItem
+        Console.WriteLine(item.ToString());
+
+        // Use the inherited Update method to change the title and job length of ChangeRequest
+        change.Update("Change the Design of the Base Class", new TimeSpan(4, 0, 0));
+
+        // ChangeRequest inherits WorkItem's override of ToString
+        Console.WriteLine(change.ToString());
+
+        // Keep the console open in debug mode
+        Console.WriteLine("Press any key to exit.");
+        Console.ReadKey();
+    }
+}

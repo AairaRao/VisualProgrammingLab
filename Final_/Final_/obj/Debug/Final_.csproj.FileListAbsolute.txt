@@ -1,0 +1,15 @@
+C:\Users\Hp\Downloads\Final_\Final_\bin\Debug\Final_.exe.config
+C:\Users\Hp\Downloads\Final_\Final_\bin\Debug\Final_.exe
+C:\Users\Hp\Downloads\Final_\Final_\bin\Debug\Final_.pdb
+C:\Users\Hp\Downloads\Final_\Final_\obj\Debug\Final_.csproj.AssemblyReference.cache
+C:\Users\Hp\Downloads\Final_\Final_\obj\Debug\MainWindow.g.cs
+C:\Users\Hp\Downloads\Final_\Final_\obj\Debug\App.g.cs
+C:\Users\Hp\Downloads\Final_\Final_\obj\Debug\Final__MarkupCompile.cache
+C:\Users\Hp\Downloads\Final_\Final_\obj\Debug\Final__MarkupCompile.lref
+C:\Users\Hp\Downloads\Final_\Final_\obj\Debug\MainWindow.baml
+C:\Users\Hp\Downloads\Final_\Final_\obj\Debug\Final_.g.resources
+C:\Users\Hp\Downloads\Final_\Final_\obj\Debug\Final_.Properties.Resources.resources
+C:\Users\Hp\Downloads\Final_\Final_\obj\Debug\Final_.csproj.GenerateResource.cache
+C:\Users\Hp\Downloads\Final_\Final_\obj\Debug\Final_.csproj.CoreCompileInputs.cache
+C:\Users\Hp\Downloads\Final_\Final_\obj\Debug\Final_.exe
+C:\Users\Hp\Downloads\Final_\Final_\obj\Debug\Final_.pdb
